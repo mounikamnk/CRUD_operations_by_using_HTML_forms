@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>retrive_accessrecord</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name">username</label>
+            <select name="name" id="name" multiple>
+                {% for wo in WTO %}
+                <option value="{{wo.id}}">{{wo.name}}</option>
+                {% endfor %}
+            
+            </select>
+            <input type="submit" value="submited">
+
+        </form>
+    </center>
+    
+</body>
+</html>
